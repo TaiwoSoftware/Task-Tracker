@@ -1,5 +1,4 @@
 import React from "react";
-import Nav from './Nav';
 import ProfileDiv from './profileDiv';
 import Body from './Body/body';
 const Home = () => {
@@ -8,7 +7,6 @@ const Home = () => {
       <div className="bodyHeader">
         <header>
           <h2>TTW</h2>
-          <Nav />
           <ProfileDiv />
           
         </header>
