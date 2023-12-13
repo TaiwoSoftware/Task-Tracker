@@ -1,18 +1,17 @@
 import React from 'react';
-import Nav from './components/Nav';
-import ProfileDiv from './components/profileDiv';
-import Body from './components/Body/body';
-
+import Home from './components/Home';
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom'
+import ErrorPage from './components/ErrorPage';
+import SignUp from './components/SignUp';
 const App = () => {
   return (
-    <div className='bodyHeader'>
-      <header>
-        <h2>TTW</h2>
-        <Nav />
-        <ProfileDiv />
-      </header>
-      <Body />
-    </div>
+    <Router>
+      <Routes>
+        <Route path= '/' element={<Home />} />
+        <Route path='/signup' element={<SignUp />} />
+        <Route path='*' element={<ErrorPage />} />
+      </Routes>
+    </Router>
   );
 }
 

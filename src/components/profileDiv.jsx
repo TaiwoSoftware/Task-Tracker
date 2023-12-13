@@ -1,10 +1,19 @@
 import React from 'react';
 import profileImage from './image/user.png';
+import { useNavigate } from 'react-router-dom';
 const ProfileDiv = () => {
+
+    const navigate = useNavigate();
+
+    const handleClick = () => {
+        navigate('/signup');
+    }
+
     return (
-        <div className='profileSetting'>
+        <div onClick={handleClick} className='profileSetting'>
             <img src={profileImage} alt='profile image' />
             <p>Sign in</p>
+            
         </div>
     );
 }

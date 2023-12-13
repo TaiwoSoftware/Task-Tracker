@@ -25,18 +25,87 @@ header {
   align-items: center;
 }
 
+header h2 {
+  color: #F24A4A;
+}
+
 h1 {
   font-weight: 700;
+  color: #263238;
+  font-size: 3rem;
 }
 
 ul li{
   display: inline;
   margin-right: 1rem;
   text-align: center;
+  color: #263238;
 }
 
 .profileSetting {
   display: flex;
   align-items: center;
   gap: 1rem;
+  cursor: pointer;
 }
+
+.profileSetting p {
+  color: #263238;
+  
+}
+
+.header {
+  margin: 0;
+  padding: 0;
+}
+
+.signComponents {
+  display: grid;
+  grid-template-columns: 50% 50%;
+  box-sizing: border-box;
+}
+
+form {
+  padding: 6rem 3rem;
+  max-width: 550px; 
+  width: 100%;
+  box-sizing: border-box;
+}
+
+
+input[type='text'],
+input[type='password'],
+input[type='email'] {
+  width: 100%;
+  padding: 1rem 2rem;
+  display: block;
+  box-sizing: border-box;
+  margin-bottom: 2rem;
+  color: #263238;
+  border: none;
+  outline: none;
+  border-bottom: 1px solid #263238;
+}
+
+
+label {
+  color: gray;
+  font-size: 1rem;
+}
+
+input[type='submit'] {
+  width: 100%;
+  padding: 1rem 2rem;
+  display: block;
+  box-sizing: border-box;
+  margin-bottom: 2rem;
+  color: #263238;
+  border: none;
+  outline: none;
+  background: #ff725e;
+  color: #fff;
+  margin-top: .5rem;
+  border-radius: .2rem;
+  box-sizing: border-box;
+}
+
