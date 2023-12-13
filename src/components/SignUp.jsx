@@ -1,6 +1,8 @@
 import React from "react";
 import { useState } from "react";
 import loginImage from "./image/sign.svg";
+import { auth } from "../firebase";
+import { createUserWithEmailAndPassword } from "firebase/auth";
 const SignUp = () => {
   const [fullName, setFullName] = useState("");
   const [email, setEmail] = useState("");
@@ -18,7 +20,12 @@ const SignUp = () => {
     }
 
     else {
-        alert("Passwords match");
+      createUserWithEmailAndPassword(auth, email, password)
+        .then((userCredentials) => {
+          console.log(userCredentials);
+        }).catch((error) => {
+          console.log(error);
+        });
     }
   };
 

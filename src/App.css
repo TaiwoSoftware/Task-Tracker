@@ -109,3 +109,6 @@ input[type='submit'] {
   box-sizing: border-box;
 }
 
+.loginForm {
+  margin-top: 5rem;
+}
