@@ -28,18 +28,21 @@ const SignUp = () => {
       <form onSubmit={handleSubmit}>
         <input
           type="text"
+          required
           placeholder="Full Name"
           value={fullName}
           onChange={(e) => setFullName(e.target.value)}
         />
         <input
           type="email"
+          required
           placeholder="your email"
           value={email}
           onChange={(e) => setEmail(e.target.value)}
         />
         <input
           type="password"
+          required
           name=""
           id=""
           placeholder="create password"
@@ -48,6 +51,7 @@ const SignUp = () => {
         />
         <input
           type="password"
+          required
           name=""
           id=""
           placeholder="confirm password"
@@ -56,6 +60,7 @@ const SignUp = () => {
         />
         <input
           type="checkbox"
+          required
           id="terms"
           checked={termsAccepted}
           onChange={() => setTermsAccepted(!termsAccepted)}
