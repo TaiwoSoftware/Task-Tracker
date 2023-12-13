@@ -1,32 +1,32 @@
 @font-face {
-  font-family: 'roboto';
-  src: url('./Roboto/Roboto-Regular.ttf');
+  font-family: "roboto";
+  src: url("./Roboto/Roboto-Regular.ttf");
 }
 
 html {
   max-width: 1440px;
   width: 100%;
-  margin:0 auto;
+  margin: 0 auto;
   box-sizing: border-box;
 }
 
-body{
+body {
   width: 100%;
   margin: 0;
   padding: 0;
-  font-family: 'roboto';
+  font-family: "roboto";
 }
 
 header {
   margin: 0;
-  padding: .2rem 1rem;
+  padding: 0.2rem 5rem;
   display: flex;
   justify-content: space-between;
   align-items: center;
 }
 
 header h2 {
-  color: #F24A4A;
+  color: #f24a4a;
 }
 
 h1 {
@@ -35,10 +35,16 @@ h1 {
   font-size: 3rem;
 }
 
-ul li{
+ul li {
   display: inline;
   margin-right: 1rem;
   text-align: center;
+  cursor: pointer;
+  color: #263238;
+}
+
+.a{
+  text-decoration: none;
   color: #263238;
 }
 
@@ -51,12 +57,13 @@ ul li{
 
 .profileSetting p {
   color: #263238;
-  
 }
 
 .header {
   margin: 0;
   padding: 0;
+  display: grid;
+  grid-template-columns: 50% 50%;
 }
 
 .signComponents {
@@ -67,15 +74,14 @@ ul li{
 
 form {
   padding: 6rem 3rem;
-  max-width: 550px; 
+  max-width: 550px;
   width: 100%;
   box-sizing: border-box;
 }
 
-
-input[type='text'],
-input[type='password'],
-input[type='email'] {
+input[type="text"],
+input[type="password"],
+input[type="email"] {
   width: 100%;
   padding: 1rem 2rem;
   display: block;
@@ -87,13 +93,12 @@ input[type='email'] {
   border-bottom: 1px solid #263238;
 }
 
-
 label {
   color: gray;
   font-size: 1rem;
 }
 
-input[type='submit'] {
+input[type="submit"] {
   width: 100%;
   padding: 1rem 2rem;
   display: block;
@@ -104,11 +109,57 @@ input[type='submit'] {
   outline: none;
   background: #ff725e;
   color: #fff;
-  margin-top: .5rem;
-  border-radius: .2rem;
+  margin-top: 0.5rem;
+  border-radius: 0.2rem;
   box-sizing: border-box;
 }
 
 .loginForm {
   margin-top: 5rem;
+}
+
+main {
+  padding: 3rem;
+}
+
+.first-header {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.first-header p{
+  margin-top: -2rem;
+  padding: 0;
+}
+
+.inner-header {
+  max-width: 500px;
+  margin: 0 auto;
+  box-sizing: border-box;
+  transform: translateY(10rem);
+}
+
+.getStartedButton {
+  background-color: #f24a4a;
+  border: none;
+  padding: .7rem 3rem;
+  color: #fff;
+  margin-top: .5rem;
+  cursor: pointer;
+  border-radius: .3rem;
+  box-shadow: 3px 3px 3px rgb(224, 224, 224);
+}
+
+.already {
+  margin-top: -1.5rem;
+  color: gray;
+  font-size: .8rem;
+}
+
+.already span {
+  color: blue;
+  text-decoration: underline;
+  font-size: .8rem;
+  cursor: pointer;
 }

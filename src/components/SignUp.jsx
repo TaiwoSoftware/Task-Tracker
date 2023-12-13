@@ -3,12 +3,14 @@ import { useState } from "react";
 import loginImage from "./image/sign.svg";
 import { auth } from "../firebase";
 import { createUserWithEmailAndPassword } from "firebase/auth";
+import { useNavigate } from "react-router-dom";
 const SignUp = () => {
   const [fullName, setFullName] = useState("");
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [confirmPassword, setConfirmPassword] = useState("");
   const [termsAccepted, setTermsAccepted] = useState(false);
+  const navigate = useNavigate()
 
   const handleSubmit = (e) => {
 
@@ -28,6 +30,10 @@ const SignUp = () => {
         });
     }
   };
+
+  const handleLogIN = () => {
+    navigate('/login');
+  }
 
   return (
     <div className="signComponents">
@@ -74,6 +80,7 @@ const SignUp = () => {
         />
         <label htmlFor="terms">Terms and Conditions</label>
         <input type="submit" value="Create an account" />
+        <p className="already">Already have an account <span onClick={handleLogIN}>Login?</span></p>
       </form>
     </div>
   );
