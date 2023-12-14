@@ -24,6 +24,7 @@ const SignUp = () => {
     else {
       createUserWithEmailAndPassword(auth, email, password)
         .then((userCredentials) => {
+          console.log('responding');
           console.log(userCredentials);
         }).catch((error) => {
           console.log(error);
