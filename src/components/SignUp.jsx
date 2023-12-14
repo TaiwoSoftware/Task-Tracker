@@ -33,7 +33,7 @@ const SignUp = () => {
   };
 
   const handleLogIN = () => {
-    navigate('/login');
+    navigate('/login')
   }
 
   return (
