@@ -18,7 +18,14 @@ const SignUp = () => {
       alert("Passwords don't match");
       return;
     } else {
-      alert("Password match");
+      createUserWithEmailAndPassword(auth, email, password)
+        .then((userCredentials) => {
+          console.log("responding");
+          console.log(userCredentials);
+        })
+        .catch((error) => {
+          console.log(error);
+        });
     }
   };
 
