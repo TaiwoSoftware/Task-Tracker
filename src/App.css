@@ -18,7 +18,6 @@ body {
 }
 
 header {
-  margin: 0;
   padding: 0.2rem 5rem;
   display: flex;
   justify-content: space-between;
@@ -35,6 +34,15 @@ h1 {
   font-size: 3rem;
 }
 
+nav {
+  position: relative;
+}
+ul {
+  max-width: 500px;
+  width: 100%;
+  transform: translateX(25rem) translateY(-4rem);
+}
+
 ul li {
   display: inline;
   margin-right: 1rem;
@@ -43,9 +51,11 @@ ul li {
   color: #263238;
 }
 
-.a{
+.a {
   text-decoration: none;
   color: #263238;
+  text-align: center;
+  cursor: pointer;
 }
 
 .profileSetting {
@@ -70,7 +80,14 @@ ul li {
   display: grid;
   grid-template-columns: 50% 50%;
   box-sizing: border-box;
+  margin-top: -2rem;
 }
+
+.mainLogo {
+  cursor: pointer;
+}
+
+
 
 form {
   padding: 6rem 3rem;
@@ -128,7 +145,7 @@ main {
   align-items: center;
 }
 
-.first-header p{
+.first-header p {
   margin-top: -2rem;
   padding: 0;
 }
@@ -143,23 +160,23 @@ main {
 .getStartedButton {
   background-color: #f24a4a;
   border: none;
-  padding: .7rem 3rem;
+  padding: 0.7rem 3rem;
   color: #fff;
-  margin-top: .5rem;
+  margin-top: 0.5rem;
   cursor: pointer;
-  border-radius: .3rem;
+  border-radius: 0.3rem;
   box-shadow: 3px 3px 3px rgb(224, 224, 224);
 }
 
 .already {
   margin-top: -1.5rem;
   color: gray;
-  font-size: .8rem;
+  font-size: 0.8rem;
 }
 
 .already span {
   color: blue;
   text-decoration: underline;
-  font-size: .8rem;
+  font-size: 0.8rem;
   cursor: pointer;
 }

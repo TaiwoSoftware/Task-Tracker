@@ -6,39 +6,57 @@ import Login from "./components/Login";
 import SignUp from "./components/SignUp";
 import AuthDetails from "./components/AuthDetails";
 import Dashboard from "./components/Dashboard";
+import About from "./components/About";
+import Contact from "./components/Contact";
+import Works from "./components/Works";
+import ProfileDiv from "./components/profileDiv";
 const App = () => {
+
   return (
-    <Router>
-      <nav>
-        <ul>
-          <li><Link className="a" to="/">Home</Link></li>
-          <li><Link className="a" to="/about">About us</Link></li>
-          <li><Link className="a" to="/contact">Contact us</Link></li>
-          <li><Link className="a" to="/works">How it works</Link></li>
-        </ul>
-      </nav>
-      <Routes>
-        <Route
-          path="/"
-          element={
-            <>
-              <Home />
-            </>
-          }
-        />
-        <Route path="/signup" element={<SignUp />} />
-        <Route path="/login" element={<Login />} />
-        <Route
-          path="/dashboard"
-          element={
-            <>
-              <Dashboard />
-            </>
-          }
-        />
-        <Route path="*" element={<ErrorPage />} />
-      </Routes>
-    </Router>
+    <>
+      <Router>
+        <header>
+          <h2 className="mainLogo">TTW</h2>
+          <ProfileDiv />
+        </header>
+        <nav>
+          <ul>
+            <Link className="a" to="/">
+              <li>Home</li>
+            </Link>
+
+            <Link className="a" to="/about">
+              <li>About us</li>
+            </Link>
+
+            <Link className="a" to="/contact">
+              <li>Contact us</li>
+            </Link>
+
+            <Link className="a" to="/works">
+              <li>How it works</li>
+            </Link>
+          </ul>
+        </nav>
+        <Routes>
+          <Route
+            path="/"
+            element={
+              <>
+                <Home />
+              </>
+            }
+          />
+          <Route path="/signup" element={<SignUp />} />
+          <Route path="/login" element={<Login />} />
+          <Route path="/dashboard" element={<Dashboard />} />
+          <Route path="/about" element={<About />} />
+          <Route path="/contact" element={<Contact />} />
+          <Route path="/works" element={<Works />} />
+          <Route path="*" element={<ErrorPage />} />
+        </Routes>
+      </Router>
+    </>
   );
 };
 
