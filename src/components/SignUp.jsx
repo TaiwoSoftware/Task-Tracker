@@ -14,11 +14,13 @@ const SignUp = () => {
   const handleSubmit = (e) => {
     e.preventDefault();
 
+
+
     if (password !== confirmPassword) {
       alert("Passwords don't match");
       return;
     } else {
-      alert("Password match");
+      navigate("/Login");
     }
   };
 

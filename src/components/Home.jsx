@@ -5,7 +5,6 @@ const Home = () => {
   return (
     <div>
       <div className="bodyHeader">
-        
         <Body />
       </div>
     </div>

@@ -10,6 +10,7 @@ import About from "./components/About";
 import Contact from "./components/Contact";
 import Works from "./components/Works";
 import ProfileDiv from "./components/profileDiv";
+import Hamburger from "./components/Hamburger";
 const App = () => {
 
   return (
@@ -17,7 +18,9 @@ const App = () => {
       <Router>
         <header>
           <h2 className="mainLogo">TTW</h2>
+          <div className="profile">
           <ProfileDiv />
+          </div>
         </header>
         <nav>
           <ul>
@@ -37,6 +40,7 @@ const App = () => {
               <li>How it works</li>
             </Link>
           </ul>
+          <Hamburger />
         </nav>
         <Routes>
           <Route
