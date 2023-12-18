@@ -139,6 +139,7 @@ form {
 
 input[type="text"],
 input[type="password"],
+input[type='date'],
 input[type="email"] {
   width: 100%;
   padding: 1rem 2rem;
@@ -314,7 +315,23 @@ main {
 .workDetails p{
   text-align: justify;
   color: gray;
-} 
+}
+
+.addTask {
+  margin-left: 35rem;
+}
+
+.addTask button {
+  background: #ff715e80;
+  padding: 1rem 2rem;
+  font-size: 3rem;
+  box-sizing: border-box;
+  border-radius: 50%;
+  cursor: pointer;
+  margin-top: 6rem;
+  color: #fff;
+  border: none;
+}
 
 @media (max-width:884px) {
   ul {
