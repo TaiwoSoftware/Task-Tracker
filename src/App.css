@@ -33,8 +33,8 @@ header h2 {
   display: flex;
   flex-direction: column;
   background: #ff725e;
-  color: white;  
-  border-radius: .5rem;
+  color: white;
+  border-radius: 0.5rem;
   position: absolute;
   padding: 1rem;
   box-sizing: border-box;
@@ -53,12 +53,11 @@ header h2 {
   box-sizing: border-box;
 }
 
-
-.hamburger div{
-  background:black;
+.hamburger div {
+  background: black;
   width: 3%;
   display: none;
-  margin-bottom: .5rem;
+  margin-bottom: 0.5rem;
   transform: translateX(70rem) translateY(-7rem);
   /* display: none; */
   cursor: pointer;
@@ -139,7 +138,7 @@ form {
 
 input[type="text"],
 input[type="password"],
-input[type='date'],
+input[type="date"],
 input[type="email"] {
   width: 100%;
   padding: 1rem 2rem;
@@ -190,7 +189,7 @@ main {
 .first-header p {
   margin-top: -2rem;
   padding: 0;
-  font-size: .8rem;
+  font-size: 0.8rem;
 }
 
 .inner-header {
@@ -199,8 +198,6 @@ main {
   box-sizing: border-box;
   transform: translateY(10rem);
 }
-
-
 
 .getStartedButton {
   background-color: #f24a4a;
@@ -265,7 +262,6 @@ main {
   box-sizing: border-box;
 }
 
-
 .contactDetails {
   padding: 2rem 2rem;
 }
@@ -312,7 +308,7 @@ main {
   font-size: 2rem;
 }
 
-.workDetails p{
+.workDetails p {
   text-align: justify;
   color: gray;
 }
@@ -333,13 +329,51 @@ main {
   border: none;
 }
 
-@media (max-width:884px) {
+.mainTask {
+  max-width: 500px;
+  width: 100%;
+  margin: 0 auto;
+  align-items: center;
+  box-sizing: border-box;
+}
+
+.mainTask input {
+  margin-top: 5rem;
+  width: 100%;
+  padding: 1rem 2rem;
+  display: block;
+  box-sizing: border-box;
+  margin-bottom: 2rem;
+  color: #263238;
+  border: none;
+  outline: none;
+  border-bottom: 1px solid #263238;
+}
+
+.mainTask button {
+  text-align: center;
+  background: #f24a4a;
+  color: #fff;
+  border: none;
+  margin-left: 12rem;
+  border-radius: 0.2rem;
+  padding: 0.7rem 3rem;
+  box-shadow: 0.5px 2px 0.6px rgb(141, 141, 141);
+  cursor: pointer;
+  box-sizing: border-box;
+}
+
+.remove {
+  display: none;
+}
+
+@media (max-width: 884px) {
   ul {
     transform: translateX(12rem) translateY(-4rem);
   }
 }
 
-@media (max-width:768px) {
+@media (max-width: 768px) {
   ul {
     transform: translateX(9rem) translateY(-4rem);
   }
@@ -357,7 +391,7 @@ main {
   }
 }
 
-@media (max-width:428px) {
+@media (max-width: 428px) {
   ul {
     display: none;
   }
@@ -366,13 +400,11 @@ main {
     display: none;
   }
 
-  .hamburger div{
+  .hamburger div {
     display: block;
     transform: translateX(20rem) translateY(-3rem);
     width: 10%;
   }
-
-  
 
   .header {
     grid-template-columns: 100%;

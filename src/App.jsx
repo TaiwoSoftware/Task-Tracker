@@ -5,7 +5,7 @@ import ErrorPage from "./components/ErrorPage";
 import Login from "./components/Login";
 import SignUp from "./components/SignUp";
 import AuthDetails from "./components/AuthDetails";
-import Dashboard from "./components/Dashboard";
+import AddTask from "./components/AddTask";
 import About from "./components/About";
 import Contact from "./components/Contact";
 import Works from "./components/Works";
@@ -53,7 +53,7 @@ const App = () => {
           />
           <Route path="/signup" element={<SignUp />} />
           <Route path="/login" element={<Login />} />
-          <Route path="/dashboard" element={<Dashboard />} />
+          <Route path="/addTask" element={<AddTask />} />
           <Route path="/about" element={<About />} />
           <Route path="/contact" element={<Contact />} />
           <Route path="/works" element={<Works />} />
