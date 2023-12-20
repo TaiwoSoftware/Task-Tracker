@@ -20,12 +20,19 @@ const SignUp = () => {
       alert("Passwords don't match");
       return;
     } else {
-      navigate("/Login");
+      createUserWithEmailAndPassword(auth, email, password)
+        .then((userCredentials) => {
+          console.log("responding");
+          console.log(userCredentials);
+        })
+        .catch((error) => {
+          console.log(error);
+        });
     }
   };
 
   const handleLogin = () => {
-    navigate("/Login");
+    navigate("/Login")
   };
 
   return (
