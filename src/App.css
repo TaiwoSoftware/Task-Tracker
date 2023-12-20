@@ -28,6 +28,42 @@ header h2 {
   color: #f24a4a;
 }
 
+.hamburgerNav {
+  width: 10%;
+  display: flex;
+  flex-direction: column;
+  background: #ff725e;
+  color: white;
+  border-radius: 0.5rem;
+  position: absolute;
+  padding: 1rem;
+  box-sizing: border-box;
+  right: 4rem;
+  top: -2rem;
+}
+
+.hamburgerNav p {
+  text-align: center;
+}
+
+.hamburger {
+  max-width: 1400px;
+  position: absolute;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+.hamburger div {
+  background: black;
+  width: 3%;
+  display: none;
+  margin-bottom: 0.5rem;
+  transform: translateX(70rem) translateY(-7rem);
+  /* display: none; */
+  cursor: pointer;
+  height: 2px;
+}
+
 h1 {
   font-weight: 700;
   color: #263238;
@@ -48,7 +84,13 @@ ul li {
   margin-right: 1rem;
   text-align: center;
   cursor: pointer;
+  transition: all 1s;
   color: #263238;
+}
+
+ul li:hover {
+  text-decoration: underline;
+  text-decoration-color: #ff725e;
 }
 
 .a {
@@ -87,8 +129,6 @@ ul li {
   cursor: pointer;
 }
 
-
-
 form {
   padding: 6rem 3rem;
   max-width: 550px;
@@ -98,6 +138,7 @@ form {
 
 input[type="text"],
 input[type="password"],
+input[type="date"],
 input[type="email"] {
   width: 100%;
   padding: 1rem 2rem;
@@ -148,6 +189,7 @@ main {
 .first-header p {
   margin-top: -2rem;
   padding: 0;
+  font-size: 0.8rem;
 }
 
 .inner-header {
@@ -166,6 +208,13 @@ main {
   cursor: pointer;
   border-radius: 0.3rem;
   box-shadow: 3px 3px 3px rgb(224, 224, 224);
+  transition: all 1s;
+}
+
+.getStartedButton:hover {
+  background: transparent;
+  border: 1px solid #ff725e;
+  color: #263238;
 }
 
 .already {
@@ -179,4 +228,198 @@ main {
   text-decoration: underline;
   font-size: 0.8rem;
   cursor: pointer;
+}
+
+.about {
+  padding: 1rem 2rem;
+}
+
+.aboutContainer {
+  display: grid;
+  grid-template-columns: 60% 40%;
+  box-sizing: border-box;
+}
+
+.details {
+  padding: 1rem 2rem;
+}
+
+.details h1 {
+  text-align: center;
+  color: #ff725e;
+  font-size: 2rem;
+}
+
+.details p {
+  text-align: justify;
+  color: gray;
+}
+
+.contactContainer {
+  display: grid;
+  grid-template-columns: 50% 50%;
+  align-items: center;
+  box-sizing: border-box;
+}
+
+.contactDetails {
+  padding: 2rem 2rem;
+}
+
+.contactDetails h1 {
+  text-align: center;
+  color: #ff725e;
+  font-size: 2rem;
+}
+
+.contactDetails p {
+  text-align: justify;
+  color: gray;
+}
+
+.contactContainer p a {
+  text-decoration: none;
+  color: gray;
+  font-weight: 600;
+}
+
+.contactImageContainer {
+  padding: 2rem;
+}
+
+.worksImg {
+  padding: 1rem 2rem;
+  box-sizing: border-box;
+}
+
+.allTogether {
+  display: grid;
+  grid-template-columns: 40% 60%;
+}
+
+.workDetails {
+  margin-top: 4rem;
+  padding: 1rem 2rem;
+}
+
+.workDetails h1 {
+  text-align: left;
+  color: #ff725e;
+  font-size: 2rem;
+}
+
+.workDetails p {
+  text-align: justify;
+  color: gray;
+}
+
+.addTask {
+  margin-left: 35rem;
+}
+
+.addTask button {
+  background: #ff715e80;
+  padding: 1rem 2rem;
+  font-size: 3rem;
+  box-sizing: border-box;
+  border-radius: 50%;
+  cursor: pointer;
+  margin-top: 6rem;
+  color: #fff;
+  border: none;
+}
+
+.mainTask {
+  max-width: 500px;
+  width: 100%;
+  margin: 0 auto;
+  align-items: center;
+  box-sizing: border-box;
+}
+
+.mainTask input {
+  margin-top: 5rem;
+  width: 100%;
+  padding: 1rem 2rem;
+  display: block;
+  box-sizing: border-box;
+  margin-bottom: 2rem;
+  color: #263238;
+  border: none;
+  outline: none;
+  border-bottom: 1px solid #263238;
+}
+
+.mainTask button {
+  text-align: center;
+  background: #f24a4a;
+  color: #fff;
+  border: none;
+  margin-left: 12rem;
+  border-radius: 0.2rem;
+  padding: 0.7rem 3rem;
+  box-shadow: 0.5px 2px 0.6px rgb(84, 84, 84);
+  cursor: pointer;
+  box-sizing: border-box;
+}
+
+.remove {
+  display: none;
+}
+
+@media (max-width: 884px) {
+  ul {
+    transform: translateX(12rem) translateY(-4rem);
+  }
+}
+
+@media (max-width: 768px) {
+  ul {
+    transform: translateX(9rem) translateY(-4rem);
+  }
+
+  .aboutContainer {
+    grid-template-columns: 100%;
+  }
+
+  .contactContainer {
+    grid-template-columns: 100%;
+  }
+
+  .allTogether {
+    grid-template-columns: 100%;
+  }
+}
+
+@media (max-width: 428px) {
+  ul {
+    display: none;
+  }
+
+  .profile {
+    display: none;
+  }
+
+  .hamburger div {
+    display: block;
+    transform: translateX(20rem) translateY(-3rem);
+    width: 10%;
+  }
+
+  .header {
+    grid-template-columns: 100%;
+  }
+
+  .inner-header {
+    transform: translateY(0);
+    margin-bottom: 2rem;
+  }
+
+  .inner-header button {
+    width: 100%;
+  }
+
+  .signComponents {
+    grid-template-columns: 100%;
+  }
 }

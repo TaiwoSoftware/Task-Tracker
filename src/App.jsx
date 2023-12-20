@@ -5,11 +5,12 @@ import ErrorPage from "./components/ErrorPage";
 import Login from "./components/Login";
 import SignUp from "./components/SignUp";
 import AuthDetails from "./components/AuthDetails";
-import Dashboard from "./components/Dashboard";
+import AddTask from "./components/AddTask";
 import About from "./components/About";
 import Contact from "./components/Contact";
 import Works from "./components/Works";
 import ProfileDiv from "./components/profileDiv";
+import Hamburger from "./components/Hamburger";
 const App = () => {
 
   return (
@@ -17,7 +18,9 @@ const App = () => {
       <Router>
         <header>
           <h2 className="mainLogo">TTW</h2>
+          <div className="profile">
           <ProfileDiv />
+          </div>
         </header>
         <nav>
           <ul>
@@ -37,6 +40,7 @@ const App = () => {
               <li>How it works</li>
             </Link>
           </ul>
+          <Hamburger />
         </nav>
         <Routes>
           <Route
@@ -49,7 +53,7 @@ const App = () => {
           />
           <Route path="/signup" element={<SignUp />} />
           <Route path="/login" element={<Login />} />
-          <Route path="/dashboard" element={<Dashboard />} />
+          <Route path="/addTask" element={<AddTask />} />
           <Route path="/about" element={<About />} />
           <Route path="/contact" element={<Contact />} />
           <Route path="/works" element={<Works />} />
