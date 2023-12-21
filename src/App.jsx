@@ -11,37 +11,39 @@ import Contact from "./components/Contact";
 import Works from "./components/Works";
 import ProfileDiv from "./components/profileDiv";
 import Hamburger from "./components/Hamburger";
+import Dashboard from "./components/Dashboard";
 const App = () => {
-
   return (
     <>
       <Router>
-        <header>
-          <h2 className="mainLogo">TTW</h2>
-          <div className="profile">
-          <ProfileDiv />
-          </div>
-        </header>
-        <nav>
-          <ul>
-            <Link className="a" to="/">
-              <li>Home</li>
-            </Link>
+        <div className="headerNav">
+          <header>
+            <h2 className="mainLogo">TTW</h2>
+            <div className="profile">
+              <ProfileDiv />
+            </div>
+          </header>
+          <nav>
+            <ul>
+              <Link className="a" to="/">
+                <li>Home</li>
+              </Link>
 
-            <Link className="a" to="/about">
-              <li>About us</li>
-            </Link>
+              <Link className="a" to="/about">
+                <li>About us</li>
+              </Link>
 
-            <Link className="a" to="/contact">
-              <li>Contact us</li>
-            </Link>
+              <Link className="a" to="/contact">
+                <li>Contact us</li>
+              </Link>
 
-            <Link className="a" to="/works">
-              <li>How it works</li>
-            </Link>
-          </ul>
-          <Hamburger />
-        </nav>
+              <Link className="a" to="/works">
+                <li>How it works</li>
+              </Link>
+            </ul>
+            <Hamburger />
+          </nav>
+        </div>
         <Routes>
           <Route
             path="/"
@@ -57,6 +59,7 @@ const App = () => {
           <Route path="/about" element={<About />} />
           <Route path="/contact" element={<Contact />} />
           <Route path="/works" element={<Works />} />
+          <Route path="/dashboard" element={<Dashboard />} />
           <Route path="*" element={<ErrorPage />} />
         </Routes>
       </Router>
