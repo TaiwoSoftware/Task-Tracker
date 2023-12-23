@@ -2,11 +2,13 @@ import React, { useState } from "react";
 import loginImage from "./image/Login-pana.svg";
 import { signInWithEmailAndPassword } from "firebase/auth";
 import { auth } from "../firebase";
+import { useNavigate } from "react-router-dom";
 import Logo from "./Logo";
 
 const Login = () => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
+  const navigate = useNavigate();
 
   const handleLogin = (e) => {
     e.preventDefault();
@@ -14,6 +16,8 @@ const Login = () => {
     signInWithEmailAndPassword(auth, email, password)
       .then((userCredentials) => {
         console.log(userCredentials);
+
+        navigate("/addTask");
       })
       .catch((error) => {
         console.log(error);
