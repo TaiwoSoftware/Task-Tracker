@@ -7,8 +7,6 @@ const ProfileDiv = () => {
   const navigate = useNavigate();
 
   const handleClick = () => {
-    console.log('clicked')
-
     navigate('/signup');
     
   };

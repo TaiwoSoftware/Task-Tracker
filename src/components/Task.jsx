@@ -1,26 +1,41 @@
 import React, { useState } from "react";
 import TaskInput from "./TaskInput";
+import Loading from "./Loading";
 const Task = () => {
-  const [handleDisplay, setHandleDisplay] = useState(false);
+  const [value, setValue] = useState("");
+  const [loading, setLoading] = useState(true);
 
-  // const [closeButton, setCloseButton] = useState(true);
+  const handleChange = (e) => {
+    setValue(e.target.value);
+    console.log(e.target.value);
+  };
 
-  // const handleChange = () => {
-  //   setHandleDisplay(!handleDisplay);
-  // };
+  const handleSubmit = () => {
+    setTimeout(() => {
+      setLoading(!loading);
+    }, 3000);
+  };
 
   return (
-    <div className="mainTask">
-      <TaskInput type="text" placeholder="Add your task" />
-      {handleDisplay && <TaskInput type="time" placeholder="Add your task" />}
-      {/* {closeButton && (
-        <button onClick={handleChange} type="submit">
-          Next
-        </button>
-        c
-      )} */}
-      <button  type="submit">Next</button>
-    </div>
+    <>
+      {loading === true ? (
+        <div className="mainTask">
+          <TaskInput
+            type="text"
+            placeholder="Add your task"
+            handleChange={handleChange}
+          />
+          <TaskInput type="date" handleChange={handleChange} />
+          <TaskInput type="time" handleChange={handleChange} />
+
+          <button onClick={handleSubmit} type="submit">
+            Next
+          </button>
+        </div>
+      ) : (
+        <Loading />
+      )}
+    </>
   );
 };
 

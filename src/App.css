@@ -15,7 +15,12 @@ body {
   margin: 0;
   padding: 0;
   font-family: "roboto";
+  box-sizing: border-box;
 }
+
+/* .headerNav {
+  border-bottom: .5px solid rgb(185, 185, 185);
+} */
 
 header {
   padding: 0.2rem 5rem;
@@ -362,9 +367,95 @@ main {
   cursor: pointer;
   box-sizing: border-box;
 }
+hr {
+  margin-top: -2rem;
+}
 
-.remove {
-  display: none;
+.dashboardContainer {
+  display: grid;
+  grid-template-columns:15% 85% ;
+  margin-top: -.4rem;
+}
+
+.mainDashboard {
+  background: rgba(236, 236, 236, 0.213);
+  background-image: linear-gradient(to bottom, #fff, rgba(236, 236, 236, 0.213),);
+  padding: 2rem 1rem;
+  height: 100vh;
+  box-sizing: border-box;
+}
+
+.mainDashboard h2{
+  color: #263238;
+  font-weight: 400;
+}
+
+
+
+.dashboardDetails {
+  padding: 2rem 1rem;
+}
+
+.innerDetails {
+  color: gray;
+  font-weight: 800;
+  margin-top: -2rem;
+}
+
+.tasks {
+  display: grid;
+  grid-template-columns: .5fr .5fr .5fr;
+  gap:1rem;
+  box-sizing: border-box;
+}
+
+
+.done {
+  color:  green;
+  box-sizing: border-box;
+  border-radius: 1rem;
+}
+
+
+
+.pie{
+  border: 2px solid rgb(132, 21, 21);
+  box-sizing: border-box;
+  border-radius: 1rem;
+  padding: 1rem 3rem;
+  box-shadow: inset 3px 3px 3px #f24a4a;
+}
+
+.pending {
+color: gold ;
+  box-sizing: border-box;
+  border-radius: 1rem;
+}
+
+.started {
+  color:  blue;
+  box-sizing: border-box;
+  border-radius: 1rem;
+}
+
+.allPriority h2 {
+  color: gray;
+  text-align: center;
+}
+
+.loading {
+  margin-top: 10rem;
+  margin-left: 5rem;
+  display: flex;
+  gap: 1rem;
+}
+
+.loading img {
+  width: 10%;
+}
+
+.loading p {
+  color: #f24a4a;
 }
 
 @media (max-width: 884px) {

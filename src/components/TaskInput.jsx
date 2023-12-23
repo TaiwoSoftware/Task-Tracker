@@ -1,12 +1,11 @@
 import React from "react";
 
-const TaskInput = ({ type, placeholder }) => {
-
-
+const TaskInput = ({ type, placeholder,handleChange,value}) => {
+  
 
   return (
     <div className="mainTask">
-      <input type={type} required placeholder={placeholder} />
+      <input type={type} value={value} onChange={handleChange} placeholder={placeholder} required />
     </div>
   );
 };
