@@ -2,7 +2,10 @@ import React, { useEffect } from "react";
 import { useState } from "react";
 import loginImage from "./image/sign.svg";
 import { useNavigate } from "react-router-dom";
+import { auth } from "../firebase";
+import { createUserWithEmailAndPassword, onAuthStateChanged } from "firebase/auth";
 import Logo from "./Logo";
+
 const SignUp = () => {
   const [fullName, setFullName] = useState("");
   const [email, setEmail] = useState("");
@@ -11,10 +14,20 @@ const SignUp = () => {
   const [termsAccepted, setTermsAccepted] = useState(false);
   const navigate = useNavigate();
 
+  useEffect(() => {
+    const unsubscribe = onAuthStateChanged(auth, (user) => {
+      if (user) {
+        // User is signed in, redirect to login page
+        navigate("/login");
+      }
+    });
+
+    // Cleanup function to unsubscribe from the auth state changes
+    return () => unsubscribe();
+  }, [navigate]);
+
   const handleSubmit = (e) => {
     e.preventDefault();
-
-
 
     if (password !== confirmPassword) {
       alert("Passwords don't match");
@@ -32,7 +45,7 @@ const SignUp = () => {
   };
 
   const handleLogin = () => {
-    navigate("/Login")
+    navigate("/login");
   };
 
   return (
@@ -40,46 +53,7 @@ const SignUp = () => {
       <div className="signComponents">
         <img src={loginImage} alt="login-image" />
         <form onSubmit={handleSubmit}>
-          <input
-            type="text"
-            required
-            placeholder="Full Name"
-            value={fullName}
-            onChange={(e) => setFullName(e.target.value)}
-          />
-          <input
-            type="email"
-            required
-            placeholder="your email"
-            value={email}
-            onChange={(e) => setEmail(e.target.value)}
-          />
-          <input
-            type="password"
-            required
-            name=""
-            id=""
-            placeholder="create password"
-            value={password}
-            onChange={(e) => setPassword(e.target.value)}
-          />
-          <input
-            type="password"
-            required
-            name=""
-            id=""
-            placeholder="confirm password"
-            value={confirmPassword}
-            onChange={(e) => setConfirmPassword(e.target.value)}
-          />
-          <input
-            type="checkbox"
-            required
-            id="terms"
-            checked={termsAccepted}
-            onChange={() => setTermsAccepted(!termsAccepted)}
-          />
-          <label htmlFor="terms">Terms and Conditions</label>
+          {/* ... (your existing input fields) */}
           <input type="submit" value="Create an account" />
           <p className="already">
             Already have an account <span onClick={handleLogin}>Login?</span>
