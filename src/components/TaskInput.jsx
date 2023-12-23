@@ -1,16 +1,11 @@
-import React, { useState } from "react";
+import React from "react";
 
-const TaskInput = ({ type, placeholder }) => {
-  const [value, setValue] = useState('')
-
-  const handleChange = (e) =>  {
-    setValue(e.target.value);
-    console.log(e.target.value);
-  }
+const TaskInput = ({ type, placeholder,handleChange,value}) => {
+  
 
   return (
     <div className="mainTask">
-      <input type={type} required value={value} onChange={handleChange} placeholder={placeholder} />
+      <input type={type} value={value} onChange={handleChange} placeholder={placeholder} required />
     </div>
   );
 };

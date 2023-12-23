@@ -443,9 +443,19 @@ color: gold ;
   text-align: center;
 }
 
+.loading {
+  margin-top: 10rem;
+  margin-left: 5rem;
+  display: flex;
+  gap: 1rem;
+}
 
-.remove {
-  display: none;
+.loading img {
+  width: 10%;
+}
+
+.loading p {
+  color: #f24a4a;
 }
 
 @media (max-width: 884px) {

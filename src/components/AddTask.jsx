@@ -6,10 +6,10 @@ const AddTask = () => {
   const [isClicked, setIsClicked] = useState(false);
   const [toggleDisplay, setToggleDisplay] = useState(true);
 
-  const handleDisplay = () => {
-    setToggleDisplay(!toggleDisplay);
-    setIsClicked(!isClicked);
-  }
+    const handleDisplay = () => {
+      setToggleDisplay(!toggleDisplay);
+      setIsClicked(!isClicked);
+    }
 
   return (
     <div>
