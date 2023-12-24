@@ -5,6 +5,7 @@ import { useNavigate } from "react-router-dom";
 import { auth } from "../firebase";
 import { createUserWithEmailAndPassword, onAuthStateChanged } from "firebase/auth";
 import Logo from "./Logo";
+import Registered from "./Registered";
 
 const SignUp = () => {
   const [fullName, setFullName] = useState("");
@@ -13,15 +14,19 @@ const SignUp = () => {
   const [confirmPassword, setConfirmPassword] = useState("");
   const [termsAccepted, setTermsAccepted] = useState(false);
   const navigate = useNavigate();
+  
+
+  const handleLogin =() => {
+    navigate('/Login')
+  }
 
   useEffect(() => {
     const unsubscribe = onAuthStateChanged(auth, (user) => {
       if (user) {
-        // User is signed in, redirect to login page
+        <Registered />
       }
     });
 
-    // Cleanup function to unsubscribe from the auth state changes
     return () => unsubscribe();
   }, [navigate]);
 
@@ -48,6 +53,7 @@ const SignUp = () => {
 
   return (
     <>
+    
       <div className="signComponents">
         <img src={loginImage} alt="login-image" />
         <form onSubmit={handleSubmit}>
@@ -93,7 +99,7 @@ const SignUp = () => {
           <label htmlFor="terms">Terms and Conditions</label>
           <input type="submit"  value="Create an account" />
           <p className="already">
-            Already have an account <span>Login?</span>
+            Already have an account <span onClick={handleLogin}>Login?</span>
           </p>
         </form>
       </div>

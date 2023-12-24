@@ -458,6 +458,16 @@ color: gold ;
   color: #f24a4a;
 }
 
+.registered {
+  background: whitesmoke;
+  padding: .5rem;
+  max-width: 200px;
+  width: 100%;
+  text-align: center;
+  border-radius: 1rem 0 0 1rem;
+  margin-left: 65.4rem;
+}
+
 @media (max-width: 884px) {
   ul {
     transform: translateX(12rem) translateY(-4rem);
