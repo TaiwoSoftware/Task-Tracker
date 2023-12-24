@@ -18,7 +18,6 @@ const SignUp = () => {
     const unsubscribe = onAuthStateChanged(auth, (user) => {
       if (user) {
         // User is signed in, redirect to login page
-        navigate("/login");
       }
     });
 
@@ -37,6 +36,7 @@ const SignUp = () => {
         .then((userCredentials) => {
           console.log("responding");
           console.log(userCredentials);
+          navigate("/login");
         })
         .catch((error) => {
           console.log(error);
@@ -44,9 +44,7 @@ const SignUp = () => {
     }
   };
 
-  const handleLogin = () => {
-    navigate("/login");
-  };
+
 
   return (
     <>
@@ -93,9 +91,9 @@ const SignUp = () => {
             onChange={() => setTermsAccepted(!termsAccepted)}
           />
           <label htmlFor="terms">Terms and Conditions</label>
-          <input type="submit" value="Create an account" />
+          <input type="submit"  value="Create an account" />
           <p className="already">
-            Already have an account <span onClick={handleLogin}>Login?</span>
+            Already have an account <span>Login?</span>
           </p>
         </form>
       </div>
