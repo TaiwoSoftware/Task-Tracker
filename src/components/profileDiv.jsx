@@ -28,7 +28,7 @@ const ProfileDiv = () => {
     <div>
       {authUser ? (
         <div className="profileSetting">
-          <p> {authUser.email}</p>
+          <p> {authUser.displayName}</p>
         </div>
       ) : (
         <div onClick={handleClick} className="profileSetting">

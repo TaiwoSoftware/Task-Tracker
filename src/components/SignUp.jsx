@@ -3,7 +3,7 @@ import { useState } from "react";
 import loginImage from "./image/sign.svg";
 import { useNavigate } from "react-router-dom";
 import { auth } from "../firebase";
-import { createUserWithEmailAndPassword, onAuthStateChanged } from "firebase/auth";
+import { createUserWithEmailAndPassword, onAuthStateChanged, updateProfile } from "firebase/auth";
 import Logo from "./Logo";
 import Registered from "./Registered";
 
@@ -14,16 +14,15 @@ const SignUp = () => {
   const [confirmPassword, setConfirmPassword] = useState("");
   const [termsAccepted, setTermsAccepted] = useState(false);
   const navigate = useNavigate();
-  
 
-  const handleLogin =() => {
-    navigate('/Login')
-  }
+  const handleLogin = () => {
+    navigate('/Login');
+  };
 
   useEffect(() => {
     const unsubscribe = onAuthStateChanged(auth, (user) => {
       if (user) {
-        <Registered />
+        <Registered />;
       }
     });
 
@@ -39,6 +38,17 @@ const SignUp = () => {
     } else {
       createUserWithEmailAndPassword(auth, email, password)
         .then((userCredentials) => {
+          // Set the display name after user creation
+          updateProfile(userCredentials.user, {
+            displayName: fullName,
+          })
+            .then(() => {
+              console.log(userCredentials.user.displayName);
+            })
+            .catch((error) => {
+              console.error("Error updating user display name:", error);
+            });
+
           console.log("responding");
           console.log(userCredentials);
           navigate("/login");
@@ -49,11 +59,8 @@ const SignUp = () => {
     }
   };
 
-
-
   return (
     <>
-    
       <div className="signComponents">
         <img src={loginImage} alt="login-image" />
         <form onSubmit={handleSubmit}>
@@ -97,7 +104,7 @@ const SignUp = () => {
             onChange={() => setTermsAccepted(!termsAccepted)}
           />
           <label htmlFor="terms">Terms and Conditions</label>
-          <input type="submit"  value="Create an account" />
+          <input type="submit" value="Create an account" />
           <p className="already">
             Already have an account <span onClick={handleLogin}>Login?</span>
           </p>
