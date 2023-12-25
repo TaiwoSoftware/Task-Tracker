@@ -7,13 +7,10 @@ const Task = () => {
 
   const handleChange = (e) => {
     setValue(e.target.value);
-    console.log(e.target.value);
   };
 
   const handleSubmit = () => {
-    setTimeout(() => {
-      setLoading(!loading);
-    }, 3000);
+    setLoading(!loading);
   };
 
   return (
@@ -32,7 +29,7 @@ const Task = () => {
             Next
           </button>
         </div>
-      ) : (
+      ):(
         <Loading />
       )}
     </>

@@ -451,7 +451,8 @@ color: gold ;
 }
 
 .loading img {
-  width: 10%;
+  width: 5%;
+  margin-left:20rem;
 }
 
 .loading p {
