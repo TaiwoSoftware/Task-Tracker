@@ -3,6 +3,7 @@ import { useState } from "react";
 import loginImage from "./image/sign.svg";
 import { useNavigate } from "react-router-dom";
 import { auth } from "../firebase";
+import { fetchSignInMethodsForEmail } from "firebase/auth";
 import { createUserWithEmailAndPassword, onAuthStateChanged, updateProfile } from "firebase/auth";
 import Logo from "./Logo";
 import Registered from "./Registered";
@@ -14,6 +15,7 @@ const SignUp = () => {
   const [confirmPassword, setConfirmPassword] = useState("");
   const [termsAccepted, setTermsAccepted] = useState(false);
   const navigate = useNavigate();
+  const [exist, setExist] = useState(true);
 
   const handleLogin = () => {
     navigate('/Login');
@@ -22,15 +24,18 @@ const SignUp = () => {
   useEffect(() => {
     const unsubscribe = onAuthStateChanged(auth, (user) => {
       if (user) {
-        <Registered />;
+        // Set a state for the message
+      } else {
+        setExistingAccountMessage(""); // Clear the message if not signed in
       }
     });
 
     return () => unsubscribe();
-  }, [navigate]);
+  }, [auth]);
 
   const handleSubmit = (e) => {
     e.preventDefault();
+    setExist(!exist) 
 
     if (password !== confirmPassword) {
       alert("Passwords don't match");
@@ -38,7 +43,6 @@ const SignUp = () => {
     } else {
       createUserWithEmailAndPassword(auth, email, password)
         .then((userCredentials) => {
-          // Set the display name after user creation
           updateProfile(userCredentials.user, {
             displayName: fullName,
           })
@@ -108,6 +112,7 @@ const SignUp = () => {
           <p className="already">
             Already have an account <span onClick={handleLogin}>Login?</span>
           </p>
+          {exist === true ? <Registered /> : <continue />}
         </form>
       </div>
     </>

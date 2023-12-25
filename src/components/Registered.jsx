@@ -3,7 +3,7 @@ import React from 'react';
 const Registered = () => {
     return (
         <div className='registered'>
-            <p>User is signed in</p>
+            <p>This account details exist</p>
         </div>
     );
 }
