@@ -4,7 +4,6 @@ import loginImage from "./image/sign.svg";
 import { useNavigate } from "react-router-dom";
 import { auth } from "../firebase";
 import { createUserWithEmailAndPassword, onAuthStateChanged, updateProfile } from "firebase/auth";
-import Logo from "./Logo";
 import Registered from "./Registered";
 
 const SignUp = () => {

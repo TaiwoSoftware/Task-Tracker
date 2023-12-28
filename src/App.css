@@ -390,6 +390,16 @@ hr {
   font-weight: 400;
 }
 
+.mainDashboard button{
+  background: #ff725e;
+  border: none;
+  padding: .3rem 2rem;
+  color: #fff;
+  border-radius: .2rem;
+  box-shadow: 2px 3px 1px rgba(82, 82, 82, 0.213);
+  cursor: pointer;
+}
+
 
 
 .dashboardDetails {
