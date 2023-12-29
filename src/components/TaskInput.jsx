@@ -10,7 +10,7 @@ const TaskInput = () => {
   const handleSubmit = (e) => {
     
     e.preventDefault();
-    navigate('/dashboard');
+    
 
     const work = { title, time, date };
     console.log(work);
@@ -19,9 +19,13 @@ const TaskInput = () => {
       method: 'POST',
       headers: { 'content-type' : 'application/json' },
       body: JSON.stringify(work)
-    }).then(() => {
+    }).then(res => {
       console.log('new task added successfully');
-    })
+      if(res.ok) {
+        
+      }
+    });
+    navigate('/dashboard');
   };
   return (
     <>
