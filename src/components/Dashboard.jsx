@@ -1,36 +1,46 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import TaskPriority from "./TaskPriority";
+import { useNavigate } from "react-router-dom";
 
 const Dashboard = () => {
+
+  const navigate = useNavigate();
+  const handleClick = () => {
+    navigate('/addTask')
+  }
+
+  const [task, setTask] = useState(null)
+
+
+  useEffect(() => {
+
+    fetch('https://658a45dbba789a962236d9ae.mockapi.io/Task')
+    .then(res => {
+        return res.json()
+    })
+
+    .then(data => {
+        console.log(data);
+        setTask(data)
+    })
+
+}, [])
+
   return (
     <div>
       <hr />
       <div className="dashboardContainer">
         <div className="mainDashboard">
           <h2>Dashboard</h2>
+          <button onClick={handleClick}>Add Task</button>
         </div>
         <div className="dashboardDetails">
           <div className="innerDetails">
             <h2>Tasks</h2>
             <div className="tasks">
-              <TaskPriority
-                details="Work on the frontend mentor task."
-                date="21/20/2023"
-                title="Write codes"
-                priority="done"
-              />
-              <TaskPriority
-                details="Work on the frontend mentor task."
-                date="21/20/2023"
-                title="Write codes"
-                priority="pending"
-              />
-              <TaskPriority
-                details="Work on the frontend mentor task."
-                date="21/20/2023"
-                title="Write codes"
-                priority="started"
-              />
+              {task && <TaskPriority
+                task={task}
+              />}
             </div>
           </div>
         </div>

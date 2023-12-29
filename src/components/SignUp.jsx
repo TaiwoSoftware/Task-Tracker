@@ -5,7 +5,6 @@ import { useNavigate } from "react-router-dom";
 import { auth } from "../firebase";
 import { fetchSignInMethodsForEmail } from "firebase/auth";
 import { createUserWithEmailAndPassword, onAuthStateChanged, updateProfile } from "firebase/auth";
-import Logo from "./Logo";
 import Registered from "./Registered";
 
 const SignUp = () => {
