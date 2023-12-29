@@ -14,7 +14,7 @@ const Dashboard = () => {
 
   useEffect(() => {
 
-    fetch('https://658a45dbba789a962236d9ae.mockapi.io/Task')
+    fetch('https://run.mocky.io/v3/75c4d0f4-b6e8-48f4-987e-b47b17f47ae8')
     .then(res => {
         return res.json()
     })
